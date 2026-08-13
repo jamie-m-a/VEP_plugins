@@ -43,7 +43,7 @@ AVI - annotate variants with AVI scores
  #CHROM  POS  REF  ALT  ag_pathogenicity  phred  quantile
 
  The PHRED score is reported by default as AVI_PHRED. The optional raw=1
- parameter also reports AVI_AG_PATHOGENICITY, and quantile=1 also reports
+ parameter additionally reports AVI_AG_PATHOGENICITY, and quantile=1 reports
  AVI_QUANTILE.
 
  The plugin annotates single nucleotide variants only.

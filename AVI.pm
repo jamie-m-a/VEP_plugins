@@ -35,31 +35,24 @@ AVI - annotate variants with AVI scores
 =head1 DESCRIPTION
 
  An Ensembl VEP plugin that retrieves AVI scores for single nucleotide
- variants from a tabix-indexed, bgzip-compressed TSV file.
-
- The input file must have the following tab-separated header and a matching
- .tbi index:
-
- #CHROM  POS  REF  ALT  ag_pathogenicity  phred  quantile
+ variants from a tabix-indexed, bgzip-compressed TSV file. 
 
  The PHRED score is reported by default as AVI_PHRED. The optional raw=1
- parameter additionally reports AVI_AG_PATHOGENICITY, and quantile=1 reports
- AVI_QUANTILE.
+ parameter additionally reports the RAW dscore as AVI_AG_PATHOGENICITY, and quantile=1
+ reports AVI_QUANTILE.
 
- The plugin annotates single nucleotide variants only.
+ Score summaries:
 
- AVI scores:
+ AVI_AG_PATHOGENICITY (approximately -1.3 to +4.0)
+ Raw score. Higher = more deleterious
 
- ag_pathogenicity (approximately -1.3 to +4.0)
- Raw score. Higher = more deleterious.
-
- quantile (0.0 to 1.0)
+ AVI_QUANTILE (0.0 to 1.0)
  Tail probability: fraction of all genome-wide SNVs with an equal or higher
- raw score. Lower = more deleterious.
+ raw score. Lower = more deleterious
 
- phred (0 to approximately 80)
+ AVI_PHRED (0 to approximately 80)
  PHRED-scaled quantile. A phred of 20 means the variant is among the top 1%
- most deleterious substitutions genome-wide. Higher = more deleterious.
+ most deleterious substitutions genome-wide. Higher = more deleterious
 
 =cut
 
